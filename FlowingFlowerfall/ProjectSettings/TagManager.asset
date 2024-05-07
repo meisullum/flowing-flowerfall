@@ -6,6 +6,9 @@ TagManager:
   tags:
   - balls
   - ground
+  - projectile
+  - bee
+  - player
   layers:
   - Default
   - TransparentFX
@@ -43,12 +46,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: TransparentFX
-    uniqueID: 2279871055
-    locked: 0
   - name: Player
     uniqueID: 160138451
     locked: 0
+  - name: TransparentFX
+    uniqueID: 2279871055
+    locked: 0
   - name: Ground
     uniqueID: 2359687107
+    locked: 0
+  - name: Flower
+    uniqueID: 562281619
     locked: 0
