@@ -7,6 +7,8 @@ public class CreatureAI : MonoBehaviour
 {
     // Start is called before the first frame update
     [Header("Config")]
+    [SerializeField] private ScoreScript flowerStealerScoreScriptCtrl;
+    
     public BeeObstacle creature; // AI bee creature
     public string targetTag; // target creature
     private Character realTarget;
@@ -83,9 +85,23 @@ public class CreatureAI : MonoBehaviour
         creature.body.GetComponent<SpriteRenderer>().color = birthColor;
     }
 
+    public void AttemptSteal() {
+
+        GameObject.Find("Scoreboard").GetComponent<ScoreScript>().BeeStealingFlower();
+    }
+
     public void SetGravity() {
+        
         Rigidbody2D rb = creature.GetComponent<Rigidbody2D>();
         rb.gravityScale = .5f; // changing the gravity of it :D 
+    }
+
+    public void Remove2DColliders() {
+        Collider2D[] myColliders = creature.GetComponents<Collider2D>(); // colliders == gone
+        foreach (Collider2D collider in myColliders) {
+            collider.enabled = false; // disables all the colliders found on object!
+        }
+
     }
 
     public void DisappearBee() {

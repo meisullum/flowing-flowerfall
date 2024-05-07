@@ -8,7 +8,9 @@ public class CreatureAISting : AIStateMachine
 
         public override void UpdateState() {}
         public override void BeginState() {
+            creatureAI.AttemptSteal();
             creatureAI.SetGravity();
+            creatureAI.Remove2DColliders(); // see if this works
             creatureAI.DisappearBee();
         }
 

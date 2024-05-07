@@ -19,6 +19,7 @@ public class CompletedTutorialScript : MonoBehaviour
     // Update is called once per frame
 
     public void StartGame(){
+        PlayerPrefs.SetInt("CurrentLevel", 0);
         scoreScriptController.CanContinue(true);
         SceneManager.LoadScene("Level1");
     }

@@ -46,6 +46,7 @@ public class TutorialScript : MonoBehaviour
         }
 
         if (scoreScriptController.GetGivenHoney() == 1 && scoreScriptController.GetGivenFlowers() == 1) {
+            PlayerPrefs.SetInt("CurrentLevel", 0);
             canvas.enabled = true; // enable canvas!
         }
     }
@@ -70,13 +71,13 @@ public class TutorialScript : MonoBehaviour
         switch(textCount) {
             case 1: tutorialText.text = "Amazing! Let's get started with controls. You will use your a,w,s,d keys to move";
                 break;
-            case 2: tutorialText.text = "Nice job! The goal of the game is to grab items the collector on the top left requests..";
+            case 2: tutorialText.text = "Nice job! The goal of the game is to grab items that the collector on the top left requests..";
                 break;
-            case 3: tutorialText.text = "The scoreboard on the left will show you the number of flowers you can hold at a time and the number of items the collector wants";
+            case 3: tutorialText.text = "Your inventory on the top left will show you the items you have and the items the collector has. You can only hold a maximum of 5 of each item";
                 break;
             case 4: tutorialText.text = "main items include flowers and honey combs that you receive";
                 break;
-            case 5: tutorialText.text  = "To collect flowers, you must first water them to grow them!";
+            case 5: tutorialText.text  = "To collect flowers, you must first water them to grow them! If you are lucky, you will get more than 1 flower at a time!";
                 break;
             case 6: tutorialText.text = "Walk over to the right hand side bud and start watering it. Make sure your water is hitting the bud";
                 flowerPrefab.SetActive(true);
